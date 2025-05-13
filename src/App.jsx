@@ -1,8 +1,29 @@
+import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
+const Layout = lazy(() => import("./components/Layout/Layout"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
+const CarDetailsPage = lazy(() =>
+  import("./pages/CarDetailsPage/CarDetailsPage")
+);
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+
 function App() {
   return (
-    <>
-      <p>Hello word!!!</p>
-    </>
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+
+          <Route path="catalog" element={<CatalogPage />}>
+            <Route path=":id" element={<CarDetailsPage />} />
+          </Route>
+
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 
