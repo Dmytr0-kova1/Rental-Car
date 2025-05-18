@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import {
   addToFavorites,
   removeFromFavorites,
 } from "../../redux/favorite/slice";
 import { selectAllFavorites } from "../../redux/favorite/selectors";
-import icon from "../../img/icons.svg";
-import s from "./Catalog.module.css";
-import { useNavigate } from "react-router-dom";
 import { imgDefault } from "../../utils/imgDefault";
 import { formatMileage } from "../../utils/formatMileage";
 import { getCityAndCountry } from "../../utils/getCityAndCountry";
+import icon from "../../img/icons.svg";
+import s from "./Catalog.module.css";
 
 const Catalog = ({
   id,
@@ -27,7 +27,6 @@ const Catalog = ({
 }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectAllFavorites);
-  const navigete = useNavigate();
 
   const isFavorite = favorites.some((item) => item.id === id);
 
@@ -54,10 +53,6 @@ const Catalog = ({
   };
 
   const { city, country } = getCityAndCountry(address);
-
-  const handleClick = () => {
-    navigete(`/catalog/${id}`);
-  };
 
   return (
     <li className={s.item}>
@@ -89,9 +84,9 @@ const Catalog = ({
         </div>
       </div>
 
-      <button className={s.btn} onClick={handleClick}>
-        Read more
-      </button>
+      <Link to={`/catalog/${id}`}>
+        <button className={s.btn}>Read more</button>
+      </Link>
     </li>
   );
 };

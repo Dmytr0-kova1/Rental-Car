@@ -19,7 +19,7 @@ export const fetchCars = createAsyncThunk(
       if (maxMileage) params.append("maxMileage", maxMileage);
 
       const { data } = await goitApi.get("cars", { params });
-      return data;
+      return data.cars || data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
