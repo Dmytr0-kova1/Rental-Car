@@ -7,9 +7,10 @@ import {
 import { selectAllFavorites } from "../../redux/favorite/selectors";
 import icon from "../../img/icons.svg";
 import s from "./Catalog.module.css";
-
-const imgDefault =
-  "https://img.freepik.com/premium-vector/modern-car-vector-sketch-illustration-auto-hand-drawing_231873-6893.jpg";
+import { useNavigate } from "react-router-dom";
+import { imgDefault } from "../../utils/imgDefault";
+import { formatMileage } from "../../utils/formatMileage";
+import { getCityAndCountry } from "../../utils/getCityAndCountry";
 
 const Catalog = ({
   id,
@@ -26,6 +27,7 @@ const Catalog = ({
 }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectAllFavorites);
+  const navigete = useNavigate();
 
   const isFavorite = favorites.some((item) => item.id === id);
 
@@ -51,17 +53,10 @@ const Catalog = ({
     }
   };
 
-  const getCityAndCountry = (address) => {
-    const parts = address.split(",");
-    const city = parts[1].trim();
-    const country = parts[2].trim();
-    return { city, country };
-  };
-
   const { city, country } = getCityAndCountry(address);
 
-  const formatMileage = (value) => {
-    return Number(value).toLocaleString("en-US").replace(/,/g, " ");
+  const handleClick = () => {
+    navigete(`/catalog/${id}`);
   };
 
   return (
@@ -80,11 +75,11 @@ const Catalog = ({
 
       <img className={s.img} src={img || imgDefault} alt={description} />
       <div className={s.container}>
-        <h3 className={s.title}>
+        <h2 className={s.title}>
           {brand}
           <span className={s.span}> {model}</span>,{year}
           <span className={s.price}>${rentalPrice}</span>
-        </h3>
+        </h2>
         <div className={s.containerText}>
           <p className={s.text}>{city}</p>
           <p className={s.text}>{country}</p>
@@ -94,7 +89,9 @@ const Catalog = ({
         </div>
       </div>
 
-      <button className={s.btn}>Read more</button>
+      <button className={s.btn} onClick={handleClick}>
+        Read more
+      </button>
     </li>
   );
 };

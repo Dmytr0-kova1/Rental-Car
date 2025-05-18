@@ -1,0 +1,172 @@
+.section {
+  color: var(--main);
+  padding-bottom: 104px;
+}
+
+.content {
+  display: flex;
+  gap: 72px;
+}
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 640px;
+  padding-top: 84px;
+}
+
+.containerImg {
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  border-radius: 19px;
+}
+
+.containerForm {
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 32px;
+  width: 100%;
+}
+
+.containerTitle {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.titleForm {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-bottom: 16px;
+}
+
+.input,
+.datePicke {
+  border: none;
+  outline: none;
+  padding: 14px 20px;
+  background: var(--inputs);
+  width: 100%;
+  border-radius: 12px;
+}
+
+.datePicke {
+  width: 576px;
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 12px 58px;
+  width: 156px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--white);
+  background: var(--button);
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.textarea {
+  outline: none;
+  height: auto;
+  border: none;
+  resize: none;
+  border-radius: 12px;
+  padding: 12px 20px 56px;
+  width: 100%;
+  background: var(--inputs);
+}
+
+.containerRight {
+  padding-top: 104px;
+  flex: 2;
+}
+
+.titleCar {
+  margin-bottom: 8px;
+}
+
+.location {
+  display: flex;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+  margin-bottom: 16px;
+}
+
+.svg {
+  margin-right: 4px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--button);
+  margin-bottom: 32px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+  margin-bottom: 68px;
+  padding-right: 70px;
+}
+
+.containerList {
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  margin-bottom: 20px;
+}
+
+.item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.svgList {
+  margin-right: 8px;
+}

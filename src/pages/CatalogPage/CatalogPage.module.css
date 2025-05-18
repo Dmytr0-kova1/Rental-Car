@@ -3,9 +3,3 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 32px;
 }
-
-.loader {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}

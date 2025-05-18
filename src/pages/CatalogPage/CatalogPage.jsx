@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ClipLoader } from "react-spinners";
 
 import s from "./CatalogPage.module.css";
 import Catalog from "../../components/Catalog/Catalog";
 import Container from "../../components/Container/Container";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import Loader from "../../components/Loader/Loader";
+
 import { selectCars, selectIsLoading } from "../../redux/car/selectors";
 import { fetchCars } from "../../redux/car/operations";
 
@@ -18,16 +19,12 @@ const CatalogPage = () => {
     dispatch(fetchCars());
   }, [dispatch]);
 
-  console.log(cars);
-
   return (
     <section>
       <Container>
         <SearchBar />
         {isLoading ? (
-          <div className={s.loader}>
-            <ClipLoader size={100} color="#3498db" />
-          </div>
+          <Loader />
         ) : (
           <ul className={s.list}>
             {cars.map((car) => (
