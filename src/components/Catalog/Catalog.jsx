@@ -60,6 +60,10 @@ const Catalog = ({
 
   const { city, country } = getCityAndCountry(address);
 
+  const formatMileage = (value) => {
+    return Number(value).toLocaleString("en-US").replace(/,/g, " ");
+  };
+
   return (
     <li className={s.item}>
       <button className={s.btnSvg} onClick={handleFavoriteClick}>
@@ -86,7 +90,7 @@ const Catalog = ({
           <p className={s.text}>{country}</p>
           <p className={s.text}>{rentalCompany}</p>
           <p className={s.text}>{type}</p>
-          <p className={s.text}>{mileage}km</p>
+          <p className={s.text}>{formatMileage(mileage)}km</p>
         </div>
       </div>
 
