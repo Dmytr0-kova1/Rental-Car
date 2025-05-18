@@ -21,3 +21,8 @@
   color: var(--main);
   background-color: transparent;
 }
+
+.btn:hover,
+.btn:focus {
+  border: 1px solid var(--button-hover);
+}

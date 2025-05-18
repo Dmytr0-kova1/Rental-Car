@@ -79,3 +79,8 @@
   background: var(--button);
   border-radius: 12px;
 }
+
+.btn:hover,
+.btn:focus {
+  background: var(--button-hover);
+}
