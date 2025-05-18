@@ -9,6 +9,7 @@ import Loader from "../../components/Loader/Loader";
 
 import { selectCars, selectIsLoading } from "../../redux/car/selectors";
 import { fetchCars } from "../../redux/car/operations";
+import { clearCars, incrementPage, resetPage } from "../../redux/car/slice";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,15 @@ const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
+    dispatch(resetPage());
+    dispatch(clearCars());
     dispatch(fetchCars());
   }, [dispatch]);
+
+  const handleLoadMore = () => {
+    dispatch(incrementPage());
+    dispatch(fetchCars());
+  };
 
   return (
     <section>
@@ -44,6 +52,14 @@ const CatalogPage = () => {
               />
             ))}
           </ul>
+        )}
+
+        {!isLoading && (
+          <div className={s.containerBtm}>
+            <button onClick={handleLoadMore} className={s.btn}>
+              Load More
+            </button>
+          </div>
         )}
       </Container>
     </section>

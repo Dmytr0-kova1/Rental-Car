@@ -6,6 +6,7 @@ import { selectBrands } from "../../redux/car/selectors";
 import { fetchCars, searchCarBrands } from "../../redux/car/operations";
 import { selectFilters } from "../../redux/filters/selectors";
 import { setFilter } from "../../redux/filters/slice";
+import { clearCars, resetPage } from "../../redux/car/slice";
 
 const SearchBar = () => {
   const brands = useSelector(selectBrands);
@@ -24,6 +25,8 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(resetPage());
+    dispatch(clearCars());
     dispatch(fetchCars());
   };
 

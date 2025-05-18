@@ -9,7 +9,9 @@ export const fetchCars = createAsyncThunk(
   "cars/fetchAll",
   async (_, { getState, rejectWithValue }) => {
     try {
-      const { brand, rentalPrice, minMileage, maxMileage } = getState().filters;
+      const state = getState();
+      const { brand, rentalPrice, minMileage, maxMileage } = state.filters;
+      const { page, limit } = state.cars;
 
       const params = new URLSearchParams();
 
@@ -17,6 +19,8 @@ export const fetchCars = createAsyncThunk(
       if (rentalPrice) params.append("rentalPrice", rentalPrice);
       if (minMileage) params.append("minMileage", minMileage);
       if (maxMileage) params.append("maxMileage", maxMileage);
+      if (limit) params.append("limit", limit);
+      if (page) params.append("page", page);
 
       const { data } = await goitApi.get("cars", { params });
       return data.cars || data;
