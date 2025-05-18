@@ -1,0 +1,85 @@
+.item {
+  width: 276px;
+  height: 424px;
+  position: relative;
+}
+
+.btnSvg {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+}
+
+.svg {
+  fill: var(--badges);
+}
+
+.svg:hover,
+.svg:focus {
+  fill: var(--button);
+}
+
+.svgBlue {
+  fill: var(--button);
+}
+
+.container {
+  padding: 16px 11px 28px 0;
+}
+
+.img {
+  border-radius: 14px;
+  width: 100%;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.span {
+  color: var(--button);
+}
+
+.price {
+  margin-left: auto;
+}
+
+.containerText {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--gray);
+  border-right: 2px solid var(--gray-light);
+  margin-right: 6px;
+  padding-right: 6px;
+}
+
+.text:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--white);
+  padding: 12px 97px;
+  background: var(--button);
+  border-radius: 12px;
+}

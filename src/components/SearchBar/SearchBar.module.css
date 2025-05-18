@@ -1,0 +1,81 @@
+.section {
+  padding-top: 84px;
+  padding-bottom: 56px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: center;
+  gap: 16px;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--gray);
+  width: 204px;
+  text-align: left;
+}
+
+.select {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding-left: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 204px;
+  background: var(--inputs);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.containerInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputLeft,
+.inputRight {
+  background: var(--inputs);
+  border: none;
+  outline: none;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  height: 44px;
+}
+
+.inputLeft {
+  border-right: 1px solid var(--gray-light);
+  border-radius: 12px 0 0 12px;
+}
+
+.inputRight {
+  border-radius: 0 12px 12px 0;
+}
+
+.inputLeft::placeholder,
+.inputRight::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.btn {
+  padding: 12px 51px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--white);
+  background: var(--button);
+  border-radius: 12px;
+}
